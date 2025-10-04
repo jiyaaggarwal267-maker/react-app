@@ -1,0 +1,130 @@
+/* Container with full background image */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("./page.jpg"); /* path to your image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional overlay for extra blur */
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1); /* very light overlay */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+/* Form card with full glass effect */
+.form-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1); /* almost fully transparent */
+  border-radius: 20px;
+  padding: 40px;
+  width: 380px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(12px); /* glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Fade-in animation for fun */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Form inputs */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-fields input {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.form-fields input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-fields input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Submit button */
+.submit-btn {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, rgba(140,92,246,0.8), rgba(124,58,237,0.8));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Login text */
+.login-text {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.login-link {
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  text-shadow: 0 0 5px rgba(124, 58, 237, 0.8);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 22px;
+  color: #ff4d4d;
+  cursor: pointer;
+  text-shadow: 0 0 5px black;
+}
